@@ -1,6 +1,8 @@
 package br.com.bb.api.servicos;
  
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -59,7 +61,9 @@ public class ClientesServico {
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public Response deleteEmployee(@PathParam("clienteid") String clienteid) {
         ClientesDAO.deleteCliente(clienteid);
-        return Response.ok("Cliente Deletado  " + clienteid).build();
+        Map<String, String> teste = new HashMap<>();
+        teste.put("mensagem", "Cliente Deletado  " + clienteid);
+        return Response.ok(teste).build();
     }
  
 }
