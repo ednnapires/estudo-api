@@ -18,11 +18,18 @@ import javax.ws.rs.core.Response;
 import br.com.bb.api.dao.ClientesDAO;
 import br.com.bb.api.objetos.Clientes;
 
+/**
+ * 
+ * @author renanrgp
+ * Essa classe faz o CRUD para o objeto Cliente. Expondo os servico via REST
+ *
+ */
 @Path("/clientes")
 public class ClientesServico {
 
 	// URI:
 	// /contextPath/servletPath/c
+	
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public List<Clientes> getCliente_JSON() {
